@@ -1,0 +1,55 @@
+.accordeon {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__pic {
+  fill: blue;
+}
+
+.box {
+  display: flex;
+  padding: rem(22px) rem(32px);
+  border-top: 1px solid #dadef0;
+  border-bottom: 1px solid #dadef0;
+  justify-content: space-between;
+}
+
+.text {
+  color: #8288a2;
+}
+
+.accordeon__elem--active {
+  .form__adaptive {
+    max-height: 100%;
+  }
+  .box {
+    .text {
+      color: $blue;
+    }
+    .arrow {
+      .arrow__svg {
+        transform: rotate(180deg);
+        fill: $blue;
+      }
+    }
+  }
+}
+
+.accordeon__elem {
+  &:hover {
+    .text {
+      color: $blue;
+    }
+    .arrow {
+      .arrow__svg {
+        fill: $blue;
+      }
+    }
+  }
+}
+
+.form__adaptive {
+  max-height: 0;
+  overflow: hidden;
+}

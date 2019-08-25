@@ -1,0 +1,241 @@
+.hide {
+  display: none;
+}
+
+#map1,
+#map2 {
+  width: 100%;
+  height: 100%;
+  min-height: rem(548px);
+}
+.ymaps-2-1-74-map {
+  width: 100% !important;
+}
+
+.form {
+  position: relative;
+}
+
+.form__order {
+  padding: rem(36px) rem(32px);
+  &--active {
+    display: none;
+  }
+}
+
+// Стилизация инпутов
+
+input[type="text"],
+textarea {
+  border-radius: rem(4px);
+  outline: none;
+  border: rem(1px) solid #dadef0;
+  text-indent: rem(20px);
+  font-size: rem(16px);
+  &:hover {
+    cursor: pointer;
+    border-color: #c3c9db;
+  }
+  &:focus {
+    border-color: #8288a2;
+  }
+}
+
+input[type="text"] {
+  height: rem(53px);
+  &::placeholder {
+    color: #b8bed8;
+  }
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: rem(38px);
+  &:last-child {
+    margin-bottom: 0;
+    justify-content: flex-end;
+    @include phones {
+      justify-content: center;
+    }
+  }
+}
+
+.form__row--flex {
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.form__block {
+  flex: 1;
+  span {
+    display: block;
+  }
+}
+
+.form__block--margin {
+  margin-right: rem(20px);
+}
+
+.form__block-title {
+  margin-bottom: rem(10px);
+  color: #3f3f3f;
+}
+
+.form__input {
+  width: 100%;
+}
+
+.form__block-area,
+.form__area {
+  width: 100%;
+  padding: 0;
+  span {
+    display: block;
+  }
+}
+
+.form__area {
+  height: rem(109px);
+  resize: none;
+}
+
+.button {
+  font-size: rem(16px);
+  border-radius: rem(28px);
+  line-height: 0;
+  background-color: $blue;
+  color: #fff;
+  border: 0;
+  outline: none;
+  padding: rem(23px) rem(58px);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue-hover;
+    transition: 0.5s;
+  }
+  &:active {
+    background-color: $blue-click;
+  }
+}
+
+// стилизация радиобоксов
+
+.form__radio {
+  @include tablets {
+    margin-bottom: rem(24px);
+  }
+}
+
+.form__radio-box,
+.form__checkbox-box {
+  display: inline-block;
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.form__radio-text {
+  display: block;
+  position: relative;
+  margin-left: rem(25px);
+  margin-right: rem(20px);
+  cursor: pointer;
+  &:hover {
+    color: $blue;
+    transition: 0.8s;
+    &::before {
+      border-color: $blue;
+      transition: 0.8s;
+    }
+  }
+  &:checked {
+    border-color: $blue;
+    &:before {
+      border-color: $blue;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: rem(-3px);
+    left: rem(-25px);
+    width: rem(18px);
+    height: rem(18px);
+    border-radius: 50%;
+    background: #fff;
+    border: rem(1px) solid #dee2f2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: rem(4px);
+    left: rem(-18px);
+    width: rem(6px);
+    height: rem(6px);
+    border-radius: 50%;
+    background: $blue;
+    opacity: 0;
+    transition: 0.5s;
+  }
+}
+
+.form__radio-box:checked + .form__radio-text:before {
+  border-color: $blue;
+}
+.form__radio-box:checked + .form__radio-text:after {
+  opacity: 1;
+}
+
+.form__checkbox-text {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  margin-left: rem(25px);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: rem(4px);
+    left: rem(-25px);
+    width: rem(15px);
+    height: rem(15px);
+    background-color: #fff;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: rem(5px);
+    left: rem(-20px);
+    width: rem(3px);
+    height: rem(7px);
+    border: rem(1px) solid #fff;
+    z-index: 1;
+    border-width: 0 rem(3px) rem(3px) 0;
+    transform: rotate(45deg);
+    transition: 0.5s;
+  }
+}
+
+.form__checkbox-box:checked + .form__checkbox-text:after {
+  border-color: $blue;
+}
+
+//Стилизация ошибок
+
+.error {
+  color: red;
+}
+.error__radio {
+  padding-top: rem(5px);
+}
+
+.input__invalid {
+  border: rem(1px) solid red !important;
+}

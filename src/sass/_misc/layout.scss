@@ -1,0 +1,70 @@
+html {
+  font-size: 14px;
+  font-family: "Montserrat";
+  @include tablets {
+    font-size: 14px;
+  }
+  @include phones {
+    font-size: 13px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: rem(996px);
+  @include tablets {
+    width: rem(736px);
+    margin: 0 rem(15px);
+  }
+}
+
+.title {
+  
+  font-size: rem(32px);
+  color: #000;
+  font-weight: normal;
+  margin-bottom: rem(41px);
+  margin-top: rem(55px);
+  @include tablets {
+    font-size: rem(24px);
+    
+  }
+}
+
+.container {
+  background-color: #fff;
+  margin-bottom: rem(115px);
+
+}
+
+.container__fullscreen{
+  @include tablets {
+    display: none;
+  }
+}
+
+.container__adaptive {
+  display: none;
+  @include tablets {
+    
+    display: block;
+  }
+}
+

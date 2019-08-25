@@ -1,0 +1,29 @@
+//colors
+$blue: #212bff;
+$blue-hover: #2029ea;
+$blue-click: #1e26d8;
+
+
+
+//breakpoints
+$tablets: 768px;
+$phones: 480px;
+
+//normalize
+@import "_misc/reset.scss";
+@import "_misc/normalize.scss";
+
+//media
+@import "_misc/media.scss";
+
+//settings
+@import "_misc/fonts.scss";
+@import "_misc/layout.scss";
+
+//blocks
+@import "blocks/form.scss";
+@import "blocks/tabs.scss";
+@import "blocks/accordeon.scss";
+
+
+
